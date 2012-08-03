@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>AMES TheJit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<style type="text/css">
+		#x-splash {position:absolute;left:0;top:0;z-index: 20001; width:360px;height:116px;}
+		#x-splash a {color: #708491;}
+		#x-splash-msg {font: normal 11px tahoma,arial,helvetica;color:#708491;}
+	</style>
+	
+    <style type="text/css">
+        @import "ames.css";
+    </style>
+	
+	<link href="images/favicon.ico" rel="icon"></link>
+	
+  </head>
+  <body id="main" style="background-color:#f2f2f2;">
+	<div id="x-splash">
+		<div class="x-splash-indicator">
+			<p style="margin-top:8px;text-align:center;" id="x-splash-msg">Loading Core...</p>
+		</div>
+	</div>
+ 
+    <script type="text/javascript">
+
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+
+      var e = document.getElementById('x-splash');
+
+      e.style.left = (w - 360) / 2;
+	  e.style.top  = (h - 116) / 2;
+
+    </script>
+
+	<script type="text/javascript">
+		document.getElementById('x-splash-msg').innerHTML = 'Loading Libraries...';
+	</script>
+ 
+    <!-- circumvent path loading error in smartgwt -->
+    <script type="text/javascript">
+      var isomorphicDir = "sc/";
+    </script>
+ 
+    <!-- GWT -->
+    <script language='javascript' src='de.kp.ames.thejit.thejit.nocache.js'></script>
+
+	<script type="text/javascript">
+		document.getElementById('x-splash-msg').innerHTML = 'Initializing...';
+	</script>
+
+  	<!-- thejit -->
+  	<script src="js/jit/jit-yc.js"></script>
+  	 
+  </body>
+</html>
