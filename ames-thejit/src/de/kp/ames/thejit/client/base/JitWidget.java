@@ -16,6 +16,7 @@ import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
+import com.smartgwt.client.util.SC;
 
 import de.kp.ames.thejit.client.event.ClickLabelEvent;
 import de.kp.ames.thejit.client.event.MouseOutLabelEvent;
@@ -96,6 +97,9 @@ public abstract class JitWidget extends Widget implements ResizeHandler, HasClic
 	}
 	
 	protected void onAttach() {
+		
+		SC.logWarn("====> thejit.JitWidget.onAttach name: " + name + " offset w/h: "+ getOffsetWidth() + "/" + getOffsetHeight());
+
 		
 		setSize("100%", "100%");
 

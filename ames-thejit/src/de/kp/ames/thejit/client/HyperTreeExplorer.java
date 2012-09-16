@@ -4,6 +4,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONArray;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONString;
+import com.smartgwt.client.util.SC;
 import com.smartgwt.client.widgets.events.DrawEvent;
 import com.smartgwt.client.widgets.events.DrawHandler;
 import com.smartgwt.client.widgets.events.ResizedEvent;
@@ -59,7 +60,11 @@ public class HyperTreeExplorer extends VLayout implements ClickLabelHandler, Mou
 		tree.addMouseOutLabelHandler(this);
 		
 		this.addMember(tree);
-		this.draw();
+		
+		/*
+		 * this draw is unnecessary and will add the widget a second time to the window!
+		 */
+//		this.draw();
 
 	}
 	
@@ -76,11 +81,15 @@ public class HyperTreeExplorer extends VLayout implements ClickLabelHandler, Mou
 
 		jsObject = evaluate(tree);
 		loadTree(HTREE_ID, jsObject);
+		
+		SC.logWarn("====> thejit.HT.loadJTree END");
 
 	}
 	
 	public void resizeTree() {
 		
+		SC.logWarn("====> thejit.HT.resizeTree");
+
 		double w = (double) this.getWidth();
 		double h = (double) this.getHeight();
 		
@@ -92,7 +101,7 @@ public class HyperTreeExplorer extends VLayout implements ClickLabelHandler, Mou
  
        var widget = jitWrappedObject(name);
        if (widget == null) return;
-		
+
 	   // release previously created labels
 	   var fx = widget.fx;
 	   if (fx) {
@@ -180,6 +189,9 @@ public class HyperTreeExplorer extends VLayout implements ClickLabelHandler, Mou
     }
 
     public void loadDefault() {
+    	
+		SC.logWarn("====> thejit.HT.loadDefault");
+
 
     	//this.setTitle("Hypertree");
  

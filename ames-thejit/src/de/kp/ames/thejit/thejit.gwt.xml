@@ -21,6 +21,6 @@
   <!-- <inherits name="com.smartclient.theme.fleet.Fleet"/> -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='de.kp.ames.thejit.client.main'/>
+  <!-- <entry-point class='de.kp.ames.thejit.client.main'/>       -->
 
 </module>
